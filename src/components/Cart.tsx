@@ -1,12 +1,10 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { IState } from '../store';
 import { ICartItem } from '../store/modules/cart/types';
 
 function Cart() {
+	// useSelector e usado para ter acesso ao estado do redux. podendo passar como tipagem generica primeiro o tipo geral do stado e em segundo oque vai retornar na sua chamada
 	const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
-
-	console.log(cart);
 
 	return (
 		<table>
